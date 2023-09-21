@@ -55,7 +55,7 @@
                     <a class="text-white px-3" href="">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a class="text-white pl-3" href="">
+                    <a class="text-white pl-3" href="https://youtu.be/xKRN0PNEw4k?si=xxdQTZonbLTR1hQh">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -75,11 +75,11 @@
                     </div>
                     <div class="d-inline-flex flex-column text-center px-3 border-right">
                         <h6>Email Us</h6>
-                        <p class="m-0">info@example.com</p>
+                        <p class="m-0">Forever69@gmail.com</p>
                     </div>
                     <div class="d-inline-flex flex-column text-center pl-3">
                         <h6>Call Us</h6>
-                        <p class="m-0">+012 345 6789</p>
+                        <p class="m-0">+91 789996789</p>
                     </div>
                 </div>
             </div>
@@ -108,12 +108,61 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
+                            
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Get Quote</a>
+                <!-- Button to trigger the modal -->
+<a href="#" class="btn btn-lg btn-primary px-3 d-none d-lg-block" data-toggle="modal" data-target="#quoteModal">Get Quote</a>
+
+<!-- Modal -->
+<div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="quoteModalLabel">Request a Quote</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Your content submission form goes here -->
+                <form action="submit_quote.php" method="POST" id="quoteForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <!-- Success message (hidden by default) -->
+                <div class="alert alert-success mt-3" id="successMessage" style="display: none;">
+                    Your data has been submitted successfully!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to handle the success message -->
+<script>
+    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+        // Show the success message and hide the form
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('quoteForm').style.display = 'none';
+    });
+</script>
+
             </div>
         </nav>
     </div>
@@ -130,9 +179,9 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
                             <h1 class="display-3 text-white mb-3">Keep Your Pet Happy</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                            <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
+                            <h5 class="text-white mb-3 d-none d-sm-block">Ensuring the Health and Happiness of Your Canine Companion</h5>
+                            <a href="booking.html" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
+                            <a href="LearnMore.html" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -142,9 +191,9 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
                             <h1 class="display-3 text-white mb-3">Pet Spa & Grooming</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                            <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
+                            <h5 class="text-white mb-3 d-none d-sm-block">Pampering Your Furry Friends to Perfection</h5>
+                            <a href="booking.html" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
+                            <a href="LearnMore.html" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -170,7 +219,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="bg-primary py-5 px-4 px-sm-5">
-                        <form class="py-5" action="process_form.php" method="POST">
+                        <form class="py-5">
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
                             </div>
@@ -190,21 +239,24 @@
                             <div class="form-group">
                                 <select class="custom-select border-0 px-4" style="height: 47px;">
                                     <option selected>Select A Service</option>
-                                    <option value="1">Service 1</option>
-                                    <option value="2">Service 1</option>
-                                    <option value="3">Service 1</option>
+                                    <option value="1">Pet Boarding</option>
+                                    <option value="2">Pet Feeding</option>
+                                    <option value="3">Pet Grooming</option>
                                 </select>
                             </div>
                             <div>
                                 <button class="btn btn-dark btn-block border-0 py-3" type="submit">Book Now</button>
                             </div>
                         </form>
+                        
                     </div>
+
+                    
                 </div>
                 <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
                     <h4 class="text-secondary mb-3">Going for a vacation?</h4>
                     <h1 class="display-4 mb-4">Book For <span class="text-primary">Your Pet</span></h1>
-                    <p>Labore vero lorem eos sed aliquy ipsum aliquy sed. Vero dolore dolore takima ipsum lorem rebum</p>
+                    <p>Conveniently Arrange Pet Care Services. Securely book grooming, boarding, and veterinary appointments for your beloved pet with ease</p>
                     <div class="row py-2">
                         <div class="col-sm-6">
                             <div class="d-flex flex-column">
@@ -212,7 +264,8 @@
                                     <h1 class="flaticon-house font-weight-normal text-secondary m-0 mr-3"></h1>
                                     <h5 class="text-truncate m-0">Pet Boarding</h5>
                                 </div>
-                                <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet</p>
+                                <p> Experience our dedicated pet boarding services, where they can relax, play, and receive exceptional care while you're away</p>
+                                
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -221,7 +274,7 @@
                                     <h1 class="flaticon-food font-weight-normal text-secondary m-0 mr-3"></h1>
                                     <h5 class="text-truncate m-0">Pet Feeding</h5>
                                 </div>
-                                <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet</p>
+                                <p>"Discover expert tips and guidelines for ensuring your pet's health and well-being through proper nutrition and meal scheduling</p>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -230,7 +283,7 @@
                                     <h1 class="flaticon-grooming font-weight-normal text-secondary m-0 mr-3"></h1>
                                     <h5 class="text-truncate m-0">Pet Grooming</h5>
                                 </div>
-                                <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet</p>
+                                <p class="m-0"> Treat your pet to a spa day with our expert grooming services, leaving them looking and feeling their absolute best</p>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -239,7 +292,7 @@
                                     <h1 class="flaticon-toy font-weight-normal text-secondary m-0 mr-3"></h1>
                                     <h5 class="text-truncate m-0">Pet Tranning</h5>
                                 </div>
-                                <p class="m-0">Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet</p>
+                                <p class="m-0">Elevate your pet's behavior and skills with our expert-led training programs, fostering a stronger bond between you and your furry friend.</p>
                             </div>
                         </div>
                     </div>
@@ -256,14 +309,14 @@
             <div class="col-lg-7 pb-5 pb-lg-0 px-3 px-lg-5">
                 <h4 class="text-secondary mb-3">About Us</h4>
                 <h1 class="display-4 mb-4"><span class="text-primary">Boarding</span> & <span class="text-secondary">Daycare</span></h1>
-                <h5 class="text-muted mb-3">Amet stet amet ut. Sit no vero vero no dolor. Sed erat ut sea. Just clita ut stet kasd at diam sit erat vero sit.</h5>
-                <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                <h5 class="text-muted mb-3">Tail-Wagging Adventures and Cozy Cuddles Await at Our Top-Notch Pet Boarding and Daycare Haven – Where Every Pet Is Treated Like Family</h5>
+                <p class="mb-4">Experience Peace of Mind with Our Secure and Caring Pet Boarding and Daycare Facilities – Where Your Pet Receives Love, Attention, and Fun While You're Away.</p>
                 <ul class="list-inline">
                     <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Best In Industry</h5></li>
                     <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Emergency Services</h5></li>
                     <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>24/7 Customer Support</h5></li>
                 </ul>
-                <a href="" class="btn btn-lg btn-primary mt-3 px-4">Learn More</a>
+                <a href="LearnMore.html" class="btn btn-lg btn-primary mt-3 px-4">Learn More</a>
             </div>
             <div class="col-lg-5">
                 <div class="row px-3">
@@ -295,48 +348,48 @@
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Boarding</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <p>Our state-of-the-art facilities provide a safe and comfortable home away from home for your pets when you can't be there.</p>
+                        <a class="text-uppercase font-weight-bold" href="service.html">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-food display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Feeding</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <p>Our dedicated staff ensures your pets receive balanced meals and dietary care tailored to their specific needs.</p>
+                        <a class="text-uppercase font-weight-bold" href="service.html">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Grooming</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <p>Pamper your pets with our professional grooming services. Our groomers will leave your pets looking and feeling their best</p>
+                        <a class="text-uppercase font-weight-bold" href="service.html">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-cat display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Per Training</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <h3 class="mb-3">Pet Training</h3>
+                        <p>  From basic obedience to specialized training, we help foster a strong bond and well-behaved companions.</p>
+                        <a class="text-uppercase font-weight-bold" href="service.html">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-dog display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Exercise</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <p>Regular exercise is vital for your pet's health. Our facilities provide a safe and fun environment for pets to stay active and engaged.</p>
+                        <a class="text-uppercase font-weight-bold" href="service.html">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Treatment</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <p>When your pet needs medical attention, our team is here. We offer top-notch care, ensuring your pet receives a path to recovery.</p>
+                        <a class="text-uppercase font-weight-bold" href="service.html">Read More</a>
                     </div>
                 </div>
             </div>
@@ -354,7 +407,7 @@
             <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
                 <h4 class="text-secondary mb-3">Why Choose Us?</h4>
                 <h1 class="display-4 mb-4"><span class="text-primary">Special Care</span> On Pets</h1>
-                <p class="mb-4">Dolor lorem lorem ipsum sit et ipsum. Sadip sea amet diam sed ut vero no sit. Et elitr stet sed sit sed kasd. Erat duo eos et erat sed diam duo</p>
+                <p class="mb-4">Choose us because we're not just a pet care service; we're a family of animal lovers committed to providing the utmost care and comfort for your furry friends. With our expertise, dedication, and a genuine passion for pets, your beloved companions are in the best hands possible.</p>
                 <div class="row py-2">
                     <div class="col-6">
                         <div class="d-flex align-items-center mb-4">
@@ -415,7 +468,7 @@
                             </ul>
                         </div>
                         <div class="card-footer border-0 p-0">
-                            <a href="" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Signup Now</a>
+                            <a href="Signup.html" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Signup Now</a>
                         </div>
                     </div>
                 </div>
@@ -439,7 +492,7 @@
                             </ul>
                         </div>
                         <div class="card-footer border-0 p-0">
-                            <a href="" class="btn btn-secondary btn-block p-3" style="border-radius: 0;">Signup Now</a>
+                            <a href="Signup.html" class="btn btn-secondary btn-block p-3" style="border-radius: 0;">Signup Now</a>
                         </div>
                     </div>
                 </div>
@@ -463,7 +516,7 @@
                             </ul>
                         </div>
                         <div class="card-footer border-0 p-0">
-                            <a href="" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Signup Now</a>
+                            <a href="Signup.html" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Signup Now</a>
                         </div>
                     </div>
                 </div>
